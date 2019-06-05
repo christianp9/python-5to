@@ -1,0 +1,91 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"       
+      xmlns:h="http://xmlns.jcp.org/jsf/html"       
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Calculadora Web</title>
+        <link rel="stylesheet" type="text/css" href="/estilos.css" 
+                  media="screen" />
+    </h:head>
+ 
+    <h:body>
+        <h:form>
+<div style="text-align: center">
+            <center>
+            <h:outputLabel value="Mi Nueva Super Calculadora Web" 
+                           style="color: steelblue; font-family: verdana; font-size: 80px " />
+ 
+            <h:panelGrid columns="1" style="text-align: center" >
+                <!-- display -->
+                <h:outputLabel id="olDisplay" value="#{calcuBeans.display}" 
+                               style="color: slateblue ; font-size: 40px" /> 
+ 
+                <!-- botones -->
+                <h:panelGrid columns="4" >
+                    <h:commandButton value="7" styleClass="boton" >
+                        <f:ajax render="olDisplay" />
+                    </h:commandButton>
+                    <h:commandButton value="8" styleClass="boton" >
+                        <f:ajax render="olDisplay" />
+                    </h:commandButton>
+                    <h:commandButton value="9" styleClass="boton" >
+                        <f:ajax render="olDisplay" />
+                    </h:commandButton>
+                    <h:commandButton value="x" styleClass="boton" >
+                        <f:ajax render="olDisplay" />
+                    </h:commandButton>
+                    <h:commandButton value="4" styleClass="boton" >
+                        <f:ajax render="olDisplay" />
+                    </h:commandButton>
+                    <h:commandButton value="5" styleClass="boton" >
+                        <f:ajax render="olDisplay" />
+                    </h:commandButton>
+                    <h:commandButton value="6" styleClass="boton" >
+                        <f:ajax render="olDisplay" />
+                    </h:commandButton>
+                    <h:commandButton value="-" styleClass="boton" >
+                        <f:ajax render="olDisplay" />
+                    </h:commandButton>
+                    <h:commandButton value="1" styleClass="boton" 
+                                     actionListener="#{calcuBeans.boton1()}" >
+                        <f:ajax render="olDisplay" />
+                    </h:commandButton>
+                    <h:commandButton value="2" actionListener="#{calcuBeans.boton2()}" 
+                                     styleClass="boton" >
+                        <f:ajax render="olDisplay" />
+                    </h:commandButton>
+                    <h:commandButton value="3" actionListener="#{calcuBeans.boton3()}" 
+                                     styleClass="boton" >
+                        <f:ajax render="olDisplay" />
+                    </h:commandButton>
+                    <h:commandButton value="+" actionListener="#{calcuBeans.sumar()}" 
+                                     styleClass="boton">
+                        <f:ajax render="olDisplay" />
+                    </h:commandButton>
+                    <h:commandButton value="." styleClass="boton">
+                        <f:ajax render="olDisplay" />
+                    </h:commandButton>
+                    <h:commandButton value="0" styleClass="boton">
+                        <f:ajax render="olDisplay" />
+                    </h:commandButton>
+                    <h:commandButton value="=" actionListener="#{calcuBeans.igual()}" 
+                                     styleClass="boton">
+                        <f:ajax render="olDisplay" />
+                    </h:commandButton>
+                    <h:commandButton value="/" styleClass="boton">
+                        <f:ajax render="olDisplay" />
+                    </h:commandButton>
+ 
+                </h:panelGrid>
+                <h:commandButton value="Clean" actionListener="#{calcuBeans.limpiar()}" 
+                                 styleClass="boton-c">
+                        <f:ajax render="olDisplay" />
+                </h:commandButton>
+ 
+            </h:panelGrid>
+            </center></div>
+</h:form>
+    </h:body>
+</html>
